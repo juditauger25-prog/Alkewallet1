@@ -56,16 +56,12 @@
     <form onsubmit="agregarContacto(); return false;">
         <input type="text" id="nombre" placeholder="Nombre del contacto" required>
         <input type="number" id="cuenta" placeholder="N° de cuenta" required>
-        <input type="number" id="dinero" placeholder="montos" required>
+        <input type="number" id="montos" placeholder="montos" required>
         <br><br>
         <button type="submit">Agregar contacto</button>
     </form>
 
-    <div class="lista">
-        <h3>Contactos guardados</h3>
-        <ul id="listaContactos"></ul>
-        <a class="nav-link" href="transactions.html">transacciones</a>
-    </div>
+
 
     <br>
     <button onclick="volverMenu()">Volver al menú</button>

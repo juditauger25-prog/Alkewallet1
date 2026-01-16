@@ -87,20 +87,22 @@ function guardarContactos(contactos) {
 function agregarContacto() {
     const nombre = document.getElementById("nombre").value.trim();
     const cuenta = document.getElementById("cuenta").value.trim();
+    const montos = document.getElementById("montos").value.trim();
 
-    if (nombre === "" || cuenta === "") {
+    if (nombre === "" ||  cuenta === "" || montos === "") {
         alert("Complete todos los campos");
         return;
     }
 
     const contactos = obtenerContactos();
 
-    contactos.push({ nombre, cuenta });
+    contactos.push({ nombre, cuenta, montos });
 
     guardarContactos(contactos);
 
     document.getElementById("nombre").value = "";
     document.getElementById("cuenta").value = "";
+    document.getElementById("montos").value = "";
 
     mostrarContactos();
 }
@@ -116,7 +118,7 @@ function mostrarContactos() {
 
     contactos.forEach((contacto, index) => {
         const li = document.createElement("li");
-        li.textContent = `${contacto.nombre} - Cuenta: ${contacto.cuenta}`;
+        li.textContent = `${contacto.nombre} - Cuenta: ${contacto.cuenta} - $${contacto.montos}`;
         lista.appendChild(li);
     });
 }
